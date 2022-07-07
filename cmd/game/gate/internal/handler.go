@@ -254,11 +254,13 @@ func handleEditUserTeam(args []interface{}) {
 	}
 
 	teamId := req.TeamId
-	// 玩家可自行添加编队，后面可能要修改为只编辑编队
-	add := false
+	//add := false
 	if teamId == 0 {
-		teamId = snowflake.GenID()
-		add = true
+		sendMsg.Code = code.ParamBindError
+		agent.WriteMsg(sendMsg)
+		return
+		//teamId = snowflake.GenID()
+		//add = true
 	}
 
 	if len(req.UserRoleIds) > 6 {
@@ -269,15 +271,15 @@ func handleEditUserTeam(args []interface{}) {
 		TeamName:    req.TeamName,
 		UserRoleIds: req.UserRoleIds,
 	}
-	if add {
-		playerData.Player.Teams = append(playerData.Player.Teams, &team)
-	} else {
-		for i, userTeam := range playerData.Player.Teams {
-			if userTeam.TeamId == teamId {
-				playerData.Player.Teams[i] = &team
-			}
+	//if add {
+	//	playerData.Player.Teams = append(playerData.Player.Teams, &team)
+	//} else {
+	for i, userTeam := range playerData.Player.Teams {
+		if userTeam.TeamId == teamId {
+			playerData.Player.Teams[i] = &team
 		}
 	}
+	//}
 
 	update := bson.M{"$set": bson.M{"teams": playerData.Player.Teams}}
 	selector := bson.M{"player_id": playerData.Player.PlayerId}
