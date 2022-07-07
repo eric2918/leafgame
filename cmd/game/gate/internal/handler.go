@@ -266,6 +266,9 @@ func handleEditUserTeam(args []interface{}) {
 	if len(req.UserRoleIds) > 6 {
 		req.UserRoleIds = req.UserRoleIds[:6]
 	}
+
+	// 判断队员是否合法（后期根据业务需求添加）
+
 	team := pb.UserTeam{
 		TeamId:      teamId,
 		TeamName:    req.TeamName,
