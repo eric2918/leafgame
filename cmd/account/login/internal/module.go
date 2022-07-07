@@ -20,4 +20,5 @@ func (m *Module) OnInit() {
 }
 
 func (m *Module) OnDestroy() {
+
 }

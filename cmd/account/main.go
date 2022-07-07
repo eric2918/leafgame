@@ -4,6 +4,7 @@ import (
 	"leafgame/cmd/account/gate"
 	"leafgame/cmd/account/login"
 	"leafgame/pkg/config"
+
 	"leafgame/pkg/leaf"
 )
 
@@ -13,5 +14,4 @@ func main() {
 		gate.Module,
 		login.Module,
 	)
-
 }

@@ -1,6 +1,6 @@
 {
 	"LogLevel": "debug",
-	"LogPath": "./logs/chat/",
+	"LogPath": "",
 
 	"Region": "zh-cn",
 	"ServerName": "chat1",

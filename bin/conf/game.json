@@ -3,7 +3,7 @@
 	"StartTime": "2022-05-09",
 
 	"LogLevel": "debug",
-	"LogPath": "./logs/game/",
+	"LogPath": "",
 
 	"TCPAddr": "192.168.12.112:21001",
 	"WSAddr": "192.168.12.112:21002",

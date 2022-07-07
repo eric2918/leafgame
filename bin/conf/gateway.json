@@ -1,6 +1,6 @@
 {
 	"LogLevel": "debug",
-	"LogPath": "./logs/gateway/",
+	"LogPath": "",
 
 	"ServerName": "gateway",
 	"ListenAddr": "192.168.12.112:31001",

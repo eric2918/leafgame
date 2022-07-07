@@ -1,9 +1,9 @@
 package internal
 
 import (
+	"leafgame/cmd/account/login"
 	"leafgame/conf"
 	"leafgame/msg"
-
 	"leafgame/pkg/leaf/gate"
 )
 
@@ -24,5 +24,6 @@ func (m *Module) OnInit() {
 		LenMsgLen:       conf.LenMsgLen,
 		LittleEndian:    conf.LittleEndian,
 		Processor:       msg.Processor,
+		AgentChanRPC:    login.ChanRPC,
 	}
 }
