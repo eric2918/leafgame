@@ -49,40 +49,6 @@ func handHeartbeat(args []interface{}) {
 	agent.WriteMsg(sendMsg)
 }
 
-func onAgentInit(agent gate.Agent) {
-	var configs pb.Config
-
-	var skills []*pb.Skill
-	if err := mongo.Collection(mongo.GAME_DB, mongo.SKILLS_COLLECTION).Find(nil).All(&skills); err != nil {
-		log.Error("get skills error: %#v \n", err.Error())
-	}
-	configs.Skills = skills
-
-	var roles []*pb.Role
-	if err := mongo.Collection(mongo.GAME_DB, mongo.ROLES_COLLECTION).Find(nil).All(&roles); err != nil {
-		log.Error("get roles error: %#v \n", err.Error())
-	}
-	configs.Roles = roles
-
-	agent.SetConfigData(config.New(&configs))
-}
-
-func onAgentDestroy(agent gate.Agent) {
-	var accountId int64
-	if val, ok := agent.PlayerData().(int64); ok {
-		accountId = val
-	} else if player, ok := agent.PlayerData().(*player.Player); ok {
-		accountId = player.Player.AccountId
-
-		cluster.Go("gateway", "AccountOffline", player.Player.AccountId)
-		center.ChanRPC.Go("UserOffline", player.Player.PlayerId, agent)
-	}
-
-	if accountId > 0 {
-		center.ChanRPC.Go("AccountOffline", accountId, agent)
-	}
-}
-
 func handleCheckLogin(args []interface{}) {
 	req := args[0].(*pb.C2GS_CheckLogin)
 	agent := args[1].(gate.Agent)
@@ -288,12 +254,16 @@ func handleEditUserTeam(args []interface{}) {
 	}
 
 	teamId := req.TeamId
+	// 玩家可自行添加编队，后面可能要修改为只编辑编队
 	add := false
 	if teamId == 0 {
 		teamId = snowflake.GenID()
 		add = true
 	}
 
+	if len(req.UserRoleIds) > 6 {
+		req.UserRoleIds = req.UserRoleIds[:6]
+	}
 	team := pb.UserTeam{
 		TeamId:      teamId,
 		TeamName:    req.TeamName,
