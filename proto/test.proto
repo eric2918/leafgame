@@ -1,0 +1,16 @@
+syntax = "proto3";
+package msg.test;
+option go_package = "../pb";
+
+message hello {
+  string  Name  = 1;
+}
+
+message C2GS_Hello {
+  string name = 1;
+}
+
+message GS2C_Hello {
+  string name = 1;
+}
+

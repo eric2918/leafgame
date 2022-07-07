@@ -33,4 +33,7 @@ func init() {
 	Processor.Register(C2GS_HEARTBEAT, &pb.C2GS_Heartbeat{})
 	Processor.Register(GS2C_HEARTBEAT, &pb.GS2C_Heartbeat{})
 
+	Processor.Register(10, &pb.C2GS_Hello{})
+	Processor.Register(11, &pb.GS2C_Hello{})
+
 }
