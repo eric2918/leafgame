@@ -1,0 +1,87 @@
+[
+	{
+		"roleId": 100001,
+		"skillIds": [
+			10000101,
+			10000102,
+			10000103,
+			10000150,
+			10000160
+		],
+		"element": 0,
+		"hp": 200,
+		"attack": 100,
+		"isForbidden": true
+	},
+	{
+		"roleId": 100002,
+		"roleName": "优莉欧勒",
+		"skillIds": [
+			10000201,
+			10000202,
+			10000203,
+			10000261
+		],
+		"element": 0,
+		"hp": 2000,
+		"attack": 100,
+		"stoneCtDropRate": 1,
+		"stoneSpDropRate": 0,
+		"stoneCtCollectWeight": 5,
+		"stoneSpCollectWeight": 0
+	},
+	{
+		"roleId": 100003,
+		"roleName": "萝特",
+		"skillIds": [
+			10000301,
+			10000302,
+			10000303,
+			10000361
+		],
+		"element": 6,
+		"hp": 2000,
+		"attack": 100,
+		"stoneCtDropRate": 1,
+		"stoneSpDropRate": 1,
+		"stoneCtCollectWeight": 10,
+		"stoneSpCollectWeight": 5
+	},
+	{
+		"roleId": 100004,
+		"roleName": "希可",
+		"skillIds": [
+			10000401,
+			10000402,
+			10000403,
+			10000461
+		],
+		"element": 4,
+		"hp": 2000,
+		"attack": 100,
+		"stoneCtDropRate": 0,
+		"stoneSpDropRate": 1,
+		"stoneCtCollectWeight": 5,
+		"stoneSpCollectWeight": 10
+	},
+	{
+		"roleId": 200001,
+		"roleName": "双足木桩",
+		"skillIds": [
+			20000101
+		],
+		"element": 1,
+		"elementNum": 2,
+		"hp": 3000,
+		"attack": 100,
+		"stoneCtDropRate": 1,
+		"stoneSpDropRate": 1,
+		"stoneCtCollectWeight": 1,
+		"stoneSpCollectWeight": 1
+	},
+	{
+		"roleId": 900001,
+		"roleName": "测试主角1号",
+		"element": 0
+	}
+]

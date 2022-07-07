@@ -1,0 +1,82 @@
+syntax = "proto3";
+package msg.player;
+option go_package = "../pb";
+// import "config.proto";
+
+// 玩家信息
+message Player {
+  int64     PlayerId          = 1;  // 玩家ID       @gotags: bson:"player_id"
+  int64     AccountId         = 2;  // 账户ID       @gotags: bson:"account_id"
+  string    NickName          = 3;  // 昵称         @gotags: bson:"nickName"
+  string    Avatar            = 4;  // 头像         @gotags: bson:"avatar"
+  repeated  UserRole Roles    = 5;  // 用户角色      @gotags: bson:"roles"
+  repeated  UserTeam Teams    = 6;  // 用户编队      @gotags: bson:"teams"
+  int64     LastHeartbeatTime = 7;  // 最后心跳时间   @gotags: bson:"last_heartbeat_time"
+}
+
+// 用户角色
+message UserRole {
+  int64 UserRoleId = 1;   // 用户角色ID   @gotags: bson:"user_role_id"
+  int64 RoleId = 2;       // 用户角色ID   @gotags: bson:"role_id"
+  int64 Level = 3;        // 用户角色等级  @gotags: bson:"level"
+}
+
+
+// 用户编队
+message UserTeam {
+  int64   TeamId  = 1;            // 编队ID @gotags: bson:"team_id"
+  string   TeamName  = 2;         // 编队名称 @gotags: bson:"team_name"
+  repeated int64 UserRoleIds = 3; // 用户角色ID @gotags: bson:"user_role_ids"
+}
+
+/**
+* @messageId 30101
+* @desc 获取用户编队
+*/
+message C2GS_GetUserTeams {
+}
+
+/**
+* @messageId 30102
+* @desc 获取用户编队
+*/
+message GS2C_GetUserTeams {
+  int64 Code  = 1;
+  repeated UserTeam Data = 2;
+}
+
+/**
+* @messageId 30103
+* @desc 获取用户角色
+*/
+message C2GS_GetUserRoles {
+}
+
+/**
+* @messageId 30104
+* @desc 获取用户角色
+*/
+message GS2C_GetUserRoles {
+  int64 Code  = 1;
+  repeated UserRole Data = 2;
+}
+
+/**
+* @messageId 30105
+* @desc 编辑用户编队
+*/
+message C2GS_EditUserTeam {
+  int64   TeamId  = 1;            // 编队ID
+  string   TeamName  = 2;         // 编队名称
+  repeated int64 UserRoleIds = 3; // 用户角色ID
+}
+
+/**
+* @messageId 30106
+* @desc 编辑用户编队
+*/
+message GS2C_EditUserTeam {
+  int64 Code  = 1;
+  repeated UserTeam Data = 2;
+}
+

@@ -1,0 +1,86 @@
+[
+	{
+		"skillId": 10000101,
+		"skillName": "测试普通技a"
+	},
+	{
+		"skillId": 10000102,
+		"skillName": "测试普通技b"
+	},
+	{
+		"skillId": 10000103,
+		"skillName": "测试普通技c"
+	},
+	{
+		"skillId": 10000150,
+		"skillName": "测试被动技a"
+	},
+	{
+		"skillId": 10000160,
+		"skillName": "测试大招a"
+	},
+	{
+		"skillId": 10000201,
+		"skillName": "202普通技"
+	},
+	{
+		"skillId": 10000202,
+		"skillName": "203普通技"
+	},
+	{
+		"skillId": 10000203,
+		"skillName": "204普通技"
+	},
+	{
+		"skillId": 10000261,
+		"skillName": "262决定技"
+	},
+	{
+		"skillId": 20000101,
+		"skillName": "龙普通技"
+	},
+	{
+		"skillId": 10000301,
+		"skillName": "萝特普通技2"
+	},
+	{
+		"skillId": 10000302,
+		"skillName": "萝特普通技3"
+	},
+	{
+		"skillId": 10000303,
+		"skillName": "萝特普通技4"
+	},
+	{
+		"skillId": 10000361,
+		"skillName": "萝特决定技"
+	},
+	{
+		"skillId": 10000401,
+		"skillName": "希可普通技2"
+	},
+	{
+		"skillId": 10000402,
+		"skillName": "希可普通技3"
+	},
+	{
+		"skillId": 10000403,
+		"skillName": "希可普通技4"
+	},
+	{
+		"skillId": 10000461,
+		"skillName": "希可决定技"
+	},
+	{
+		"skillId": 40000001,
+		"skillName": "测试道具技a"
+	},
+	{
+		"skillId": 90000171,
+		"skillName": "测试主角伤害技"
+	},
+	{
+		"skillId": 90000172,
+		"skillName": "测试主角治疗技"
+	}
+]

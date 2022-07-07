@@ -1,0 +1,15 @@
+syntax = "proto3";
+package msg.account;
+option go_package = "../pb";
+
+// 账户信息
+message Account {
+  int64  AccountId  = 1; // 账户ID @gotags: bson:"account_id"
+  string Username   = 2; // 用户名 @gotags: bson:"username"
+  string Password   = 3; // 密码 @gotags: bson:"password"
+  string Salt       = 4; // 盐 @gotags: bson:"salt"
+  string Email      = 5; // 邮箱 @gotags: bson:"email"
+  int32  Status     = 6; // 状态[0:正常, 1:禁用] @gotags: bson:"status"
+  string Region     = 7; // 区域  @gotags: bson:"region"
+  int64  CreateAt   = 8; // 创建时间 @gotags: bson:"create_at"
+}

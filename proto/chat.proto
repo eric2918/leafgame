@@ -1,0 +1,45 @@
+syntax = "proto3";
+package msg.chat;
+option go_package = "../pb";
+
+message ChatMsg {
+  string RoomName = 1;
+  int64 UserId = 2;
+  int64 MsgTime =3 ;
+  optional bytes MsgContent = 4;
+}
+
+/**
+* @messageId 40101
+* @desc 聊天消息
+*/
+message C2GS_SendMsg {
+  string RoomName =1;
+  optional bytes Msg =2;
+}
+
+/**
+* @messageId 40102
+* @desc 聊天消息
+*/
+message GS2C_SendMsg {
+  string Err =1;
+}
+
+/**
+* @messageId 40103
+* @desc 消息列表
+*/
+message GS2C_MsgList {
+  repeated  ChatMsg MsgList = 1;
+}
+
+
+// 心跳包请求
+message C2GS_Heartbeat{
+}
+
+// 心跳包回复
+message GS2C_Heartbeat {
+  int64 timestamp = 1;
+}

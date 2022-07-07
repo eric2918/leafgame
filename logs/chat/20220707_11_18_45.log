@@ -1,0 +1,9 @@
+2022/07/07 11:18:45 [release] Leaf 1.1.3 starting up
+2022/07/07 11:18:45 [debug  ] newTCPConn: 192.168.12.112:31001
+2022/07/07 11:18:45 [release] gateway server is online
+2022/07/07 11:18:45 [debug  ] newTCPConn: 192.168.12.112:60588
+2022/07/07 11:18:45 [release] game1 server is online
+2022/07/07 11:19:08 [debug  ] read message: EOF
+2022/07/07 11:19:08 [release] gateway server is offline
+2022/07/07 11:19:09 [debug  ] read message: EOF
+2022/07/07 11:19:09 [release] game1 server is offline

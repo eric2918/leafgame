@@ -1,0 +1,57 @@
+syntax = "proto3";
+package msg.config;
+option go_package = "../pb";
+
+message Config {
+  repeated Skill Skills = 1;
+  repeated Role Roles = 2;
+}
+
+// 技能信息
+message Skill {
+  int64   SkillId     = 1;  // 技能ID    @gotags: bson:"skill_id"
+  string  SkillName   = 2;  // 技能名称   @gotags: bson:"skill_name"
+}
+
+// 角色信息
+message Role {
+  int64   RoleId  = 1;          // 角色ID   @gotags: bson:"role_id"
+  string  RoleName = 2 ;        // 角色名称  @gotags: bson:"role_name"
+  int64   SkinId  = 3;          // 皮肤ID   @gotags: bson:"skin_id"
+  repeated int64  SkillIds = 4; // 技能ID   @gotags: bson:"skill_ids"
+  int64   Hp      = 5;          // 血量     @gotags: bson:"hp"
+  int64   Attack  = 6;          // 攻击力    @gotags: bson:"attack"
+}
+
+/**
+* @messageId 10201
+* @desc 获取所有技能
+*/
+message C2GS_GetSkills {
+}
+
+/**
+* @messageId 10202
+* @desc 获取所有技能
+*/
+message GS2C_GetSkills {
+  int64 Code = 1;
+  repeated Skill Data = 2;
+}
+
+/**
+* @messageId 10101
+* @desc 获取所有角色
+*/
+message C2GS_GetRoles {
+}
+
+/**
+* @messageId 10102
+* @desc 获取所有角色
+*/
+message GS2C_GetRoles {
+  int64 Code  = 1;
+  repeated Role Data = 2;
+}
+
